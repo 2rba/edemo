@@ -1,0 +1,11 @@
+<h1>Orders</h1>
+<ul class="list-unstyled list-inline">
+{{#each order in model}}
+  <li>
+  {{#link-to 'order' order classNames='btn btn-info'}}
+    {{order.id}}
+  {{/link-to}}
+    </ul>
+{{/each}}
+</ul>
+{{#link-to 'orders.create' classNames='btn btn-large btn-primary'}}Create Order{{/link-to}}

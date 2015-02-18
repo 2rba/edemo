@@ -23,6 +23,6 @@
 //= require edemo
 //= require_tree .
 
-window.Edemo = Ember.Application.create({
+window.App = Ember.Application.create({
     LOG_TRANSITIONS: true
 })

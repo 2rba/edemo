@@ -1,10 +1,16 @@
 // For more information see: http://emberjs.com/guides/routing/
 
-Edemo.Router.map(function(){
-    this.resource('rows')
+App.Router.map(function(){
+
+    this.resource('orders', function(){
+        this.route('create');
+        this.resource('order',{path: '/orders/:post_id'}, function(){
+
+        });
+    })
 });
-Edemo.IndexRoute = Ember.Route.extend({
+App.IndexRoute = Ember.Route.extend({
   beforeModel: function() {
-    this.transitionTo('rows');
+    this.transitionTo('orders.index');
   }
 });
