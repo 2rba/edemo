@@ -1,0 +1,30 @@
+create
+{{model}}
+{{model.id}}
+<button >submit</button>
+
+row-edit class="edit" value=todo.title focus-out="acceptChanges" insert-newline="acceptChanges"
+<br/>
+
+{{type-ahead data=model submit='submitItem' name="colour" selection=myColour classNames="typeahead"}}
+
+sel
+{{myColour.colour}}
+
+
+{{#link-to 'orders'}}back{{/link-to}}
+
+<table class="table">
+    <tr><th>#</th></tr>
+    {{#each item in model.items}}
+      <tr>
+          <td>{{item.title}}
+          {{render 'orders/item' item}}
+          </td>
+      </tr>
+    {{/each}}
+
+</table>
+
+<br/>
+

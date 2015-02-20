@@ -21,6 +21,7 @@
 //= require ember-data
 //= require_self
 //= require edemo
+//= require twitter/typeahead
 //= require_tree .
 
 window.App = Ember.Application.create({

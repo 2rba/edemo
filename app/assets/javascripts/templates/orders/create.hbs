@@ -1,1 +1,18 @@
 create
+{{model}}
+<button ></button>
+
+row-edit class="edit" value=todo.title focus-out="acceptChanges" insert-newline="acceptChanges"
+<br/>
+
+{{type-ahead data=content name="colour" selection=myColour classNames="typeahead"}}
+
+sel
+{{myColour.colour}}
+
+
+{{#link-to 'orders'}}back{{/link-to}}
+
+
+<br/>
+

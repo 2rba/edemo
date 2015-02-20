@@ -47,4 +47,5 @@ gem 'ember-rails'
 gem 'ember-source', '1.9.0'
 
 gem 'twitter-bootstrap-rails'
+gem 'twitter-typeahead-rails'
 
