@@ -26,6 +26,8 @@
     };
 
 
+
+
     var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
       'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
       'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
@@ -63,6 +65,29 @@
 
     initializeTypeahead: function(data){
       var _this = this;
+        var engine = new Bloodhound({
+          name: 'animals',
+          remote: {
+              url: '/api/v1/products/search?name=%QUERY',
+              filter: function (result) {
+                  console.log(result.products);
+                  return result.products;
+                          // Map the remote source JSON array to a JavaScript object array
+                          //return $.map(result.products, function (movie) {
+                          //    return {
+                          //        value: movie.original_title
+                          //    };
+                          //});
+                      }
+          },
+          datumTokenizer: function(d) {
+              debugger;
+            return Bloodhound.tokenizers.whitespace(d.val);
+          },
+          queryTokenizer: Bloodhound.tokenizers.whitespace
+        });
+        engine.initialize();
+
       this.typeahead = this.$().typeahead({
               hint: true,
               highlight: true,
@@ -70,8 +95,8 @@
           },
           {
         name: _this.$().attr('id') || "typeahead",
-          displayKey: 'value',
-            source: substringMatcher(states)
+          displayKey: 'title',
+            source: engine.ttAdapter() //substringMatcher(states)
 
         //limit: this.get("limit") || 5,
         //local: data.map(function(item) {
@@ -82,7 +107,7 @@
         //    emberObject: item
         //  };
         //})
-      });
+      }).focus();
 
       this.typeahead.on("typeahead:selected", function(event, item) {
           console.log('1');
