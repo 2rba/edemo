@@ -1,20 +1,15 @@
 App.OrderController = Ember.ObjectController.extend({
     actions:{
-        dudud:function(){
-            console.log('weird');
-        },
-        submitItem: function(param1,param2){
+        submitItem: function(product){
             console.log('ev');
-            console.log(param1);
-            console.log(param2);
-            console.log(this);
-
+            console.log(product);
             var order = this.get('model');
             var item = this.store.createRecord('order-item',{
-                title: 'new one'
+                title: product.title,
+                product_id: product.id,
+                order: order
             });
             order.get('items').addObject(item);
-            //product.get('reviews').addObject(review);
         }
     }
 });
