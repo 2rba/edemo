@@ -1,5 +1,5 @@
 class OrderShowSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :created_at
   has_many 'order_items', embed: :ids, embed_in_root: true, key: 'items'
   root  'order'
 

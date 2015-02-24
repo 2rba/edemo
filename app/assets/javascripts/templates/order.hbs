@@ -1,4 +1,11 @@
 <h1>Order</h1>
+
+{{#if model.createdAt}}
+  <div class="muted">
+    created at: {{model.createdAt}}
+  </div>
+{{/if}}
+
 {{type-ahead data=model submit='submitItem' name="colour" selection=myColour classNames="typeahead" placeholder="start typing product name"}}
 
 
