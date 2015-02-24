@@ -9,7 +9,9 @@ App.OrderController = Ember.ObjectController.extend({
                 product_id: product.id,
                 order: order
             });
+            item.save();
             order.get('items').addObject(item);
+
         }
     }
 });

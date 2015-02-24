@@ -12,6 +12,9 @@ Rails.application.routes.draw do
           get :search
         end
       end
+
+      resources :orders, only: [:index, :create, :show]
+      resources :order_items, only: [:index, :show, :create]
     end
   end
 
