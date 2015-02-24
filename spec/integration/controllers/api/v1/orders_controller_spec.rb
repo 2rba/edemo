@@ -43,4 +43,15 @@ RSpec.describe Api::V1::OrdersController do
 
   end
 
+  describe '#create empty order' do
+    before do
+      post '/api/v1/orders', {}
+    end
+
+    it 'order with id' do
+      expect_json_types('order',{id: :integer})
+    end
+
+  end
+
 end

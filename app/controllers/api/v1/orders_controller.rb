@@ -4,7 +4,7 @@ class Api::V1::OrdersController < ApplicationController
   end
 
   def create
-    # TODO
+    render json: Order.create
   end
 
   def show
