@@ -3,7 +3,7 @@
 {{#each order in model}}
   <li>
   {{#link-to 'order' order classNames='btn btn-info'}}
-    items: {{itemsCount}}
+    {{order.id}}
   {{/link-to}}
     </ul>
 {{/each}}
