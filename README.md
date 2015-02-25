@@ -24,6 +24,8 @@ Installation
 
         git clone 'https://github.com/2rba/edemo.git'
         bundle
+        rake db:migrate
+        rake db:seed
         rails s
 
 Development
