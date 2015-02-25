@@ -10,4 +10,10 @@ class Api::V1::OrdersController < ApplicationController
   def show
     render json: Order.find(params[:id]), serializer: OrderShowSerializer
   end
+
+  def destroy
+    Order.find(params[:id]).destroy
+    head :no_content
+  end
+
 end

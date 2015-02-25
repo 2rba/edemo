@@ -54,4 +54,20 @@ RSpec.describe Api::V1::OrdersController do
 
   end
 
+
+  describe '#destroy' do
+    before do
+      @order3 = FactoryGirl.create(:order)
+    end
+
+    it 'successfuly destroy order' do
+      delete "/api/v1/orders/#{@order3.id}"
+      expect(response).to have_http_status(204)
+      expect(Order.where(id: @order3.id).first).to eq(nil)
+    end
+
+
+  end
+
+
 end

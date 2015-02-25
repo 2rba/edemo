@@ -13,7 +13,7 @@ Rails.application.routes.draw do
         end
       end
 
-      resources :orders, only: [:index, :create, :show]
+      resources :orders, only: [:index, :create, :show, :destroy]
       resources :order_items, only: [:index, :show, :create, :destroy]
     end
   end
