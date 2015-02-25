@@ -13,4 +13,9 @@ class Api::V1::OrderItemsController < ApplicationController
   def index
     render json: OrderItem.find(params[:ids])
   end
+
+  def destroy
+    OrderItem.find(params[:id]).destroy
+    head :ok
+  end
 end
