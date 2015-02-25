@@ -16,6 +16,6 @@ class Api::V1::OrderItemsController < ApplicationController
 
   def destroy
     OrderItem.find(params[:id]).destroy
-    head :ok
+    head :no_content
   end
 end

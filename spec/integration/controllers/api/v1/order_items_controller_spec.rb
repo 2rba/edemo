@@ -61,7 +61,7 @@ RSpec.describe Api::V1::OrderItemsController do
 
     it 'successfuly destroy line item' do
       delete "/api/v1/order_items/#{@item3.id}"
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(204)
       expect(OrderItem.where(id: @item3.id).first).to eq(nil)
     end
 
