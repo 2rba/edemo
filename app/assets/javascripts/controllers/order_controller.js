@@ -27,3 +27,7 @@ App.OrderController = Ember.ObjectController.extend({
 App.OrdersCreateController = Ember.ObjectController.extend({
 
 });
+
+App.OrdersIndexController = Ember.ArrayController.extend({
+    itemsCount: Ember.computed.alias('model.length')
+});
